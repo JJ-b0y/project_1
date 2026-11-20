@@ -1,0 +1,105 @@
+.card-container {
+    background-color: var(--color-card-bg);
+    min-height: 225px;
+    padding: 22px;
+    border-radius: 15px;
+    border: 1px solid var(--color-card-border);
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+}
+.cardHeightWithHeader {
+    height: 350px;
+}
+.cardHeightWithButton {
+    height: 280px;
+}
+.topBorderRadius {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.card-heading {
+    font-size: 1.1em;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 15px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    margin-bottom: 18px;
+}
+.blueHeading {
+    background-color: hsl(194, 68%, 93%);
+    color: var(--color-primary-blue);
+}
+.orangeHeading {
+    background-color: hsl(0, 59%, 96%);
+    color: var(--color-primary-orange);
+}
+.card-title {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 7px;
+    line-height: 1.55;
+}
+.card-subTitle {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    color: var(--color-fade);
+    font-size: 13px;
+    margin: 10px 0;
+    line-height: 1.35;
+}
+.card-content {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: var(--color-fade);
+}
+.card-link {
+    font-size: 1.1em;
+    font-weight: 750;
+    margin-top: 15px;
+    color: var(--color-primary-blue);
+}
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background-color: hsl(194, 68%, 93%);
+  border-top-left-radius: 100%;
+  pointer-events: none;
+}
+.outerBorder {
+    border: 1px solid hsl(0, 0%, 90%);
+}
+.card-outer-border-text-wrapper {
+    width: 100%;
+}
+.blueOuterBorderBgColor {
+    background: linear-gradient(135deg,var(--color-primary-blue),#72c5da);
+    color: #fff;
+    height: 150px;
+    display: grid;
+    align-items: center;
+    text-align: start;
+    font-family: var(--font-standout);
+    font-size: 26px;
+}
+.orangeOuterBorderBgColor {
+    background: linear-gradient(135deg,var(--color-primary-orange),#ffb56e);
+    color: #fff;
+    height: 150px;
+    display: grid;
+    align-items: center;
+    text-align: start;
+    font-family: var(--font-standout);
+    font-size: 26px;
+}
+.marginTop {
+    margin-top: 135px;
+}

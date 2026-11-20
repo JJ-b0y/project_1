@@ -1,0 +1,79 @@
+<div class="min-h-175 flex items-center justify-center">
+    @if (isLoading()) {
+        <div class="absolute top-[50%] left-[50%] translate-z-[-50%]"><mat-spinner diameter="48" strokeWidth="4"></mat-spinner></div>
+    } @else {
+        <div class="bg-white! border border-card-border shadow-card rounded-[20px] mt-2 mb-24 p-5.5 min-w-125 max-sm:min-w-75 min-h-125">
+            <span class="text-primary-orange text-[13px] max-sm:text-[11px] font-bold tracking-[.08em]">YRA MEMBERSHIP</span>
+            <h1 class="mt-0 text-[2.5em] max-sm:text-[2em] leading-[1.15] font-bold mb-4 font-[ui-sans-serif]">Join the community</h1>
+            <div class="form-container">
+                <form class="grid">
+                    <div class="flex gap-4">
+                        <div class="flex flex-col mb-5 w-full">
+                            <label for="fullName" class="font-bold text-[13px] mb-1.5">Full Name</label>
+                            <input
+                                class="p-3 border border-[#d5d8d8] rounded-[10px] bg-white"
+                                type="text"
+                                [formField]="registerForm.fullName"
+                            >
+                        </div>
+                        <div class="flex flex-col mb-5 w-full">
+                            <label for="email" class="font-bold text-[13px] mb-1.5">Email</label>
+                            <input
+                                class="p-3 border border-[#d5d8d8] rounded-[10px] bg-white"
+                                type="email"
+                                [formField]="registerForm.email"
+                            >
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col mb-5 w-full">
+                            <label for="country" class="font-bold text-[13px] mb-1.5">Country</label>
+                            <input
+                                class="p-3 border border-[#d5d8d8] rounded-[10px] bg-white"
+                                type="text"
+                                [formField]="registerForm.country"
+                            >
+                        </div>
+                        <div class="flex flex-col mb-5 w-full">
+                            <label for="institution" class="font-bold text-[13px] mb-1.5">Institution</label>
+                            <input
+                                class="p-3 border border-[#d5d8d8] rounded-[10px] bg-white"
+                                type="text"
+                                [formField]="registerForm.institution"
+                            >
+                        </div>
+                    </div>
+                    <div class="flex flex-col mb-5 w-full">
+                        <label for="career" class="font-bold text-[13px] mb-1.5">Career / research level</label>
+                        <select
+                            class="p-3 border border-[#d5d8d8] rounded-[10px] bg-white"
+                            type="text"
+                            [formField]="registerForm.career"
+                        >
+                            <option value="undergraduate">Undergraduate researcher</option>
+                            <option value="postgraduate">Postgraduate researcher</option>
+                            <option value="early-career">Early-career researcher</option>
+                            <option value="academicPro">Academic / professional</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col mb-5 w-full">
+                        <label for="interest" class="font-bold text-[13px] mb-1.5">Research interests</label>
+                        <textarea
+                            class="p-3 border border-[#d5d8d8] rounded-[10px] bg-white"
+                            id="interest"
+                            [formField]="registerForm.interest"
+                        ></textarea>
+                    </div>
+                    <button
+                        class="mb-5"
+                        (click)="onRegister($event)"
+                        type="submit"
+                        [disabled]="registerForm().invalid()"
+                    >
+                        Create YRA membership →
+                    </button>
+                </form>
+            </div>
+        </div>
+    }
+</div>

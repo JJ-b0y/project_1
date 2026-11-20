@@ -1,0 +1,93 @@
+<section class="block items-start w-full">
+    <div class="flex min-h-200 rounded-[18px] shadow-2xl gap-2 w-full bg-[linear-gradient(135deg,#fff_0%,#f4fbfd_70%,#e9f7fa_100%)] py-16 g-x-pad">
+        <div class="flex rounded-[18px] rounded-l-2xl shadow-2xl gap-2 border border-gray-300 g-x-pad ml-0! pl-0! left-0!">
+            <aside class="bg-bg-footer min-w-55 h-full rounded-l-2xl items-start justify-start max-[1300px]:hidden">
+                <div class="flex flex-col flex-wrap gap-2.5 max-md:gap-1 mt-6 leading-7 max-md:leading-normal px-4">
+                    <span class="flex items-start justify-start text-white text-[1.2em] font-bold p-3">YRA ADMIN</span>
+                    @for (
+                    item of [
+                        '▦ Overview',
+                        '◫ Events & Training',
+                        '▤ Resources',
+                        '◉ Media',
+                        '🔔 Announcements',
+                        '◎ Opportunities',
+                        '♙ Members',
+                        '₦ Payments',
+                        '⚙ Settings',
+                    ];
+                    track item
+                    ) {
+                    <button class="w-full py-1.5 font-normal text-[1.1em] text-white cursor-pointer rounded hover:bg-[hsl(194,62%,39%)]">{{ item }}</button>
+                    }
+                </div>
+            </aside>
+            <div class="flex flex-col justify-start pl-2 pt-3 pb-6">
+                <div class="flex flex-col justify-between mb-6.25 w-full">
+                    <p class="font-[850] tracking-[0.08em] uppercase text-[11px] text-primary-orange! max-md:text-[10px]">
+                        ADMINISTRATION
+                    </p>
+                    <div class="flex max-md:flex-col max-md:gap-2 justify-between items-baseline-last max-md:items-start">
+                        <h1 class="font-serif font-bold text-[37px] leading-[1.15] tracking-[-1.8px] max-md:text-[30px]">
+                            YRA Control Centre
+                        </h1>
+                        <app-button
+                            buttonText="+ Create content"
+                            buttonType="orange"
+                        ></app-button>
+                    </div>
+                </div>
+                <div class="flex max-[970px]:flex-col max-[970px]:w-full gap-6 w-full">
+                    @for (item of topCards; track item.figure) {
+                        <div class="flex flex-col gap-1 bg-white w-48 max-[370px]:w-28 max-[442px]:w-25.5 max-[648px]:w-30 max-[788px]:w-45 max-[962px]:w-54 h-24 p-4 rounded-2xl border border-card-border">
+                            <span class="text-primary-blue text-[1.8em] font-bold">{{ item.figure }}</span>
+                            <span class="text-fade text-[13px]">{{ item.category }}</span>
+                        </div>
+                    }
+                </div>
+                <div class="flex flex-col gap-6 bg-white w-full max-[370px]:w-70 max-[442px]:w-85 max-[648px]:w-100 max-[788px]:w-150 max-[962px]:w-180 h-85 p-6 rounded-2xl border border-card-border mt-6">
+                    <div class="flex flex-col font-fontSans">
+                        <h2 class="font-bold text-[1.2em]">Recent registrations</h2>
+                        <p class="text-fade tracking-[0.04em]">Role-based admin should allow authorised executives to manage only their permitted areas.</p>
+                    </div>
+                    <table mat-table [dataSource]="registered" class="mat-shadow-2 rounded-xl">
+                        <!-- Participant Column -->
+                        <ng-container matColumnDef="Participant">
+                            <th mat-header-cell *matHeaderCellDef>Participant</th>
+                            <td mat-cell *matCellDef="let element">{{ element.participant }}</td>
+                        </ng-container>
+
+                        <!-- Programme Column -->
+                        <ng-container matColumnDef="Programme">
+                            <th mat-header-cell *matHeaderCellDef>Programme</th>
+                            <td mat-cell *matCellDef="let element"> {{element.programme}} </td>
+                        </ng-container>
+
+                        <!-- Payment Column -->
+                        <ng-container matColumnDef="Payment">
+                            <th mat-header-cell *matHeaderCellDef>Payment</th>
+                            <td mat-cell *matCellDef="let element"> {{element.payment}} </td>
+                        </ng-container>
+
+                        <!-- Status Column -->
+                        <ng-container matColumnDef="Status">
+                            <th mat-header-cell *matHeaderCellDef>Status</th>
+                            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                </div>
+                <div class="flex max-[970px]:flex-col max-[970px]:w-full w-full justify-between gap-3">
+                    @for (item of bottomCards; track $index) {
+                        <div class="flex flex-col gap-3 bg-white w-56 max-[370px]:w-70 max-[442px]:w-85 max-[648px]:w-100 max-[788px]:w-150 max-[962px]:w-180 h-40 mt-6 p-6 rounded-2xl border border-card-border">
+                            <span class="font-bold text-[1.2em]">{{ item.title }}</span>
+                            <span class="text-fade text-[13px]">{{ item.desc }}</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

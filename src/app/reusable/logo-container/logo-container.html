@@ -1,0 +1,17 @@
+<div
+    [ngClass]="{ 
+        navLogoContainer: logoLoc() === 'nav',
+        heroLogoContainer: logoLoc() === 'hero',
+        footerLogoContainer: logoLoc() === 'footer',
+    }"
+>
+    <img
+        src="myLogo.jpg"
+        alt="Young Researcher Academy Logo"
+        [ngClass]="{
+            navLogo: logoLoc() === 'nav',
+            heroLogo: logoLoc() === 'hero',
+            footerLogo: logoLoc() === 'footer',
+        }"
+    />
+</div>

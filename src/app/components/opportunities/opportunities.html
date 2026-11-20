@@ -1,0 +1,32 @@
+<section class="block items-start w-full">
+    <app-page-header
+        [heading]="pageHeader.heading"
+        [title]="pageHeader.title"
+        [description]="pageHeader.description"
+    />
+    <div class="w-full bg-[linear-gradient(135deg,#fff_0%,#f4fbfd_70%,#e9f7fa_100%)] g-x-pad py-16">
+        <div class="grid grid-cols-3 max-[1125px]:grid-cols-2 max-sm:grid-cols-1 gap-4">
+            @for (item of opportunities; track item.id) {
+                <app-card
+                    [id]="item.id"
+                    [heading]="item.heading"
+                    [title]="item.title"
+                    [subTitle]="item.subTitle"
+                    [content]="item.content"
+                    [link]="item.link"
+                    [linkText]="item.linkText"
+                    [showOverlay]="item.showOverlay"
+                    [showOuterBorder]="item.showOuterBorder"
+                    [showButton]="item.showButton"
+                    [buttonType]="item.buttonType"
+                    [buttonText]="item.buttonText"
+                    [outerBorderTextTag]="item.outerBorderTextTag"
+                    [showOuterTextTag]="item.showOuterTextTag"
+                    [needLongerCard]="item.needLongerCard"
+                    [minHeight]="item.minHeight"
+                />
+            }
+        </div>
+    </div>
+</section>
+

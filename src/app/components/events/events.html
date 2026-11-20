@@ -1,0 +1,40 @@
+<section class="block items-start w-full">
+    <app-page-header
+        [heading]="pageHeader.heading"
+        [title]="pageHeader.title"
+        [description]="pageHeader.description"
+    />
+    <div class="w-full bg-[linear-gradient(135deg,#fff_0%,#f4fbfd_70%,#e9f7fa_100%)]! pt-16 pb-16 max-md:pt-10 max-md:pb-2 g-x-pad max-lg:px-12">
+        <div class="flex flex-col justify-between mb-6.25 w-full">
+            <p class="text-primary-orange! font-[850] tracking-[0.08em] uppercase text-[12px] max-md:text-[10px]">
+                upcoming
+            </p>
+            <h1 class="font-standout font-bold mt-1 mb-5 leading-[1.15] text-[37px] max-md:text-[30px] tracking-[-1.8px] text-black">
+                Registration is open
+            </h1>
+        </div>
+        <div class="grid grid-cols-3 max-[1058px]:grid-cols-2 max-[660px]:flex max-[660px]:flex-col gap-4.5">
+            @for (event of upcomingEvents; track event.id) {
+                <app-card
+                    [id]="event.id"
+                    [heading]="event.heading | uppercase"
+                    [title]="event.title"
+                    [subTitle]="event.subTitle"
+                    [content]="event.content"
+                    [link]="event.link"
+                    [linkText]="event.linkText"
+                    [showOverlay]="event.showOverlay"
+                    [showOuterBorder]="event.showOuterBorder"
+                    [showButton]="event.showButton"
+                    [buttonType]="event.buttonType"
+                    [buttonText]="event.buttonText"
+                    [outerBorderTextTag]="event.outerBorderTextTag"
+                    [showOuterTextTag]="event.showOuterTextTag"
+                    [needLongerCard]="event.needLongerCard"
+                    [minHeight]="event.minHeight"
+                />
+            }
+        </div>
+    </div>
+</section>
+

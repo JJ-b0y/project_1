@@ -1,0 +1,32 @@
+<section class="block items-start w-full">
+    <app-page-header
+        [heading]="pageHeader.heading"
+        [title]="pageHeader.title"
+        [description]="pageHeader.description"
+    />
+    <div class="w-full bg-[linear-gradient(135deg,#fff_0%,#f4fbfd_70%,#e9f7fa_100%)]! pt-16 pb-16 max-md:pt-10 max-md:pb-2 g-x-pad max-lg:px-12">
+        <div class="grid grid-cols-3 max-[1058px]:grid-cols-2 max-[660px]:flex max-[660px]:flex-col gap-4.5">
+            @for (event of upcomingEvents; track event.id) {
+                <app-card
+                    [id]="event.id"
+                    [heading]="event.heading | uppercase"
+                    [title]="event.title"
+                    [subTitle]="event.subTitle"
+                    [content]="event.content"
+                    [link]="event.link"
+                    [linkText]="event.linkText"
+                    [showOverlay]="event.showOverlay"
+                    [showOuterBorder]="event.showOuterBorder"
+                    [showButton]="event.showButton"
+                    [buttonType]="event.buttonType"
+                    [buttonText]="event.buttonText"
+                    [outerBorderTextTag]="event.outerBorderTextTag"
+                    [showOuterTextTag]="event.showOuterTextTag"
+                    [needLongerCard]="event.needLongerCard"
+                    [minHeight]="event.minHeight"
+                />
+            }
+        </div>
+    </div>
+</section>
+

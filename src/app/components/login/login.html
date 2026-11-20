@@ -1,0 +1,49 @@
+<div class="min-h-175 flex items-center justify-center">
+    @if (isLoading()) {
+        <div class="absolute top-[50%] left-[50%] translate-z-[-50%]"><mat-spinner diameter="48" strokeWidth="4"></mat-spinner></div>
+    } @else {
+        <div class="bg-white! border border-card-border shadow-card rounded-[20px] mt-2 mb-24 p-5.5 min-w-125 max-sm:min-w-75 min-h-125">
+            <span class="text-primary-orange text-[13px] max-sm:text-[11px] font-bold tracking-[.08em]">YRA ACCOUNT</span>
+            <h1 class="mt-0 text-[2.5em] max-sm:text-[2em] leading-[1.15] font-bold mb-4 font-[ui-sans-serif]">Welcome back</h1>
+            <p class="max-sm:text-[0.95em] text-[hsl(0,0%,40%)]">Sign in to access your member dashboard.</p>
+            <div class="form-container">
+                <form class="grid">
+                    <div class="flex flex-col mb-5 w-full">
+                        <label for="email" class="font-bold text-[13px] mb-1.5">Email address</label>
+                        <input
+                            class="p-3 border border-[#d5d8d8] rounded-[10px] bg-white"
+                            type="email"
+                            placeholder="you@example.com"
+                            [formField]="loginForm.email"
+                        >
+                    </div>
+                    <div class="flex flex-col mb-5 w-full">
+                        <label for="password" class="font-bold text-[13px] mb-1.5">Password</label>
+                        <input
+                            class="p-3 border border-[#d5d8d8] rounded-[10px] bg-white text-[1.1em]"
+                            type="password"
+                            placeholder="▪▪▪▪▪▪▪▪"
+                            [formField]="loginForm.password"
+                        >
+                    </div>
+                    <div class="flex gap-1 mb-5 items-center justify-start">
+                        <input type="checkbox" class="cursor-pointer" [formField]="loginForm.rememberMe" (change)="!loginModel().rememberMe">
+                        <label for="checkbox">Remember me</label>
+                    </div>
+                    <button
+                        class="mb-5"
+                        (click)="onLogIn($event)"
+                        type="submit"
+                        [disabled]="loginForm().invalid()"
+                    >
+                        Sign in
+                    </button>
+                </form>
+            </div>
+            <div class="">
+                <span class="text-[13px] text-[hsl(0,0%,40%)] mr-1">New to YRA?</span>
+                <a routerLink="/register" class="font-bold decoration-0 text-[13px] text-primary-blue">Create an account</a>
+            </div>
+        </div>
+    }
+</div>

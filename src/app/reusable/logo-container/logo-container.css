@@ -1,0 +1,58 @@
+.navLogoContainer {
+    border-radius: 5px;
+}
+.heroLogoContainer {
+    background: var(--color-card-bg);
+    border-radius: 24px;
+    box-shadow: var(--shadow-card);
+    padding: 16px;
+}
+.footerLogoContainer {
+    width: 90px;
+    height: 90px;
+    background: var(--color-card-bg);
+    border-radius: 12px;
+}
+.navLogo {
+    height: 58px;
+    width: 58px;
+    border-radius: 5px;
+    object-position: center;
+    object-fit: cover;
+}
+.heroLogo {
+    height: 440px;
+    width: 600px;
+    object-position: center;
+    object-fit: cover;
+}
+.footerLogo {
+    object-position: center;
+    object-fit: cover;
+    background: var(--color-card-bg);
+    border-radius: 12px;
+}
+@media (width < 768px) {
+    .heroLogo {
+        height: 280px;
+        width: 300px;
+        object-position: center;
+        object-fit: cover;
+    }
+    .heroLogoContainer {
+        height: 340px;
+        width: 70%;
+    }
+}
+@media (width < 450px) {
+    .heroLogo {
+        height: 280px;
+        width: 250px;
+        object-position: center;
+        object-fit: cover;
+    }
+    .heroLogoContainer {
+        height: 340px;
+        width: 60%;
+    }
+}

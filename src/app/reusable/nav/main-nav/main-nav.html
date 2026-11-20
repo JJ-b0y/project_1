@@ -1,0 +1,71 @@
+<header class="flex flex-col items-start w-full bg-[#FFFF] border-b-[#636565] backdrop-blur-[10px]">
+
+    <nav class="flex w-full h-18 gap-7 g-x-pad py-0 bg-white font-fontSans items-center justify-between border-b border-gray-200">
+        <a routerLink="/" class="flex items-center gap-2.5 ">
+            <div class="flex gap-2.5">
+                <app-logo-container logoLoc="nav" />
+                <div class="flex flex-col items-start justify-center gap-1">
+                    <span class="block text-[#1f2933] text-[17px] font-bold leading-[1.05]">Young Researcher</span>
+                    <span class="block text-primary-orange text-[15px] font-extrabold leading-[1.55]">Academy</span>
+                </div>
+            </div>
+        </a>
+        <ul class="max-xl:hidden flex items-center justify-center list-none gap-5.5 text-[14px]">
+            @for (link of navLinks; track link.id) {
+                <li class="text-[#3a4750] hover:text-[#8094a3] font-bold cursor-pointer">
+                    <a
+                        class="decoration-0"
+                        [routerLink]="link.path"
+                        routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                    >
+                        {{ link.name }}
+                    </a>
+                </li>
+            }
+        </ul>
+        <div class="flex items-center justify-center gap-8">
+            <div class="max-md:hidden flex gap-2 items-center">
+                @if (authInitializedState$()) {
+                    @if (loggedInState$()) {
+                        <app-button
+                            buttonType="white"
+                            buttonText="Logout"
+                            (onClickTracker)="logOutUser()"
+                        />
+                    } @else {
+                        <app-button
+                        buttonType="white"
+                        buttonText="Login"
+                        (onClickTracker)="navigateToLogin()"
+                    />
+                    }
+                } @else {
+                    <span>loading...</span>
+                }
+                <app-button
+                    buttonType="orange"
+                    buttonText="Join YRA"
+                    (onClickTracker)="navigateToSignUp()"
+                />
+            </div>
+            <div class="min-xl:hidden bg-[hsl(193,69%,98%)] rounded-[50%]">
+                <button matIconButton [matMenuTriggerFor]="menu" aria-label="Open Navigation menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu 
+                    #menu="matMenu"
+                    xPosition="before"
+                    yPosition="below"
+                >
+                    @for (link of allLinks; track link.id) {
+                        <button mat-menu-item [routerLink]="link.path" routerLinkActive="active">
+                            <span class="hover:font-extrabold">{{ link.name }}</span>
+                        </button>
+                    }
+                </mat-menu>
+            </div>
+        </div>
+    </nav>
+</header>
+

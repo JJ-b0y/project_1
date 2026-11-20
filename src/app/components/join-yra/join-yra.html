@@ -1,0 +1,65 @@
+<section class="block items-start w-full">
+    <app-page-header
+        [heading]="pageHeader.heading"
+        [title]="pageHeader.title"
+        [description]="pageHeader.description"
+    />
+    <div class="flex max-[1052px]:flex-col gap-4 w-full justify-center items-center bg-[linear-gradient(135deg,#fff_0%,#f4fbfd_70%,#e9f7fa_100%)]! g-x-pad py-16">
+        <div class="flex flex-col">
+            <div class="flex flex-col">
+                <h1 class="font-standout font-bold mt-1 mb-5 leading-[1.15] text-[37px] max-md:text-[30px] tracking-[-1.8px] text-black">
+                YRA Membership
+                </h1>
+                <p class="font-[calibri] max-w-150 text-[18px] max-md:text-[13px] leading-7 max-md:leading-normal mb-3">
+                    Membership should connect your profile with YRA programmes, resources, announcements and future community features.
+                </p>
+            </div>
+            <div class="flex flex-col gap-1 bg-white w-120 max-[370px]:w-70 max-[442px]:w-85 max-[648px]:w-100 max-[788px]:w-150 max-[962px]:w-180 h-80 p-6 rounded-2xl border border-card-border">
+                <h2 class="font-bold text-[24px]">Member benefits</h2>
+                <div class="flex flex-col gap-1.5 max-md:gap-1 mt-6 leading-7 max-md:leading-normal">
+                    @for (
+                    item of [
+                        '✓ Access selected resources',
+                        '✓ Training and programme opportunities',
+                        '✓ Research community and networking',
+                        '✓ Mentorship and peer support',
+                        '✓ Member announcements',
+                    ];
+                    track item
+                    ) {
+                    <span class="text-[16px] font-normal text-fade">{{ item }}</span>
+                    }
+                </div>
+                <app-button 
+                    buttonType="orange"
+                    buttonText="Create membership"
+                    (onClickTracker)="openSignup()"
+                />
+            </div>
+        </div>
+        <div class="flex flex-col gap-6 bg-white w-120 max-[370px]:w-70 max-[442px]:w-85 max-[648px]:w-100 max-[788px]:w-150 max-[962px]:w-180 h-113.5 p-6 rounded-2xl border border-card-border">
+            <h2 class="font-bold text-[24px]">Already a member?</h2>
+            <span class="text-[16px] font-normal text-fade">
+                Sign in to manage your programmes, resources, certificates and profile.
+            </span>
+            <app-button 
+                buttonType="blue"
+                buttonText="Member login"
+                (onClickTracker)="navigateToLogin()"
+            />
+
+            <hr class="text-gray-200">
+
+            <h2 class="font-bold text-[24px]">Admin access</h2>
+            <span class="text-[16px] font-normal text-fade">
+                Prototype view of the role-based YRA administration dashboard.
+            </span>
+            <app-button 
+                buttonType="white"
+                buttonText="Open admin dashboard"
+                (onClickTracker)="navigateToDashboard()"
+            />
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,133 @@
+<section class="block items-start w-full">
+    <app-page-header
+        [heading]="pageHeader.heading"
+        [title]="pageHeader.title"
+        [description]="pageHeader.description"
+    />
+    <div class="w-full bg-[linear-gradient(135deg,#fff_0%,#f4fbfd_70%,#e9f7fa_100%)]! pt-16 pb-16 max-md:pt-10 max-md:pb-2 g-x-pad max-lg:px-12">
+        <p class="text-primary-orange! font-[850] tracking-[0.08em] uppercase text-[12px] max-md:text-[10px]">
+            who we are
+        </p>
+        <div class="flex gap-13.5 max-lg:flex-col justify-center items-center">
+            <div class="">
+                <h1 class="font-standout font-bold mt-1 mb-5 leading-[1.15] text-[37px] max-md:text-[30px] tracking-[-1.8px] text-black">
+                    A collaborative community of researchers and scholars.
+                </h1>
+                <p class="font-[calibri] max-w-150 text-[18px] max-md:text-[13px] leading-7 max-md:leading-normal mb-3">
+                    Young Researcher Academy is a collaborative community dedicated to academic growth, skill development and research excellence.
+                </p>
+                <p class="font-[calibri] max-w-150 text-[18px] max-md:text-[13px] leading-7 max-md:leading-normal">
+                    YRA provides a structured environment where members can stay informed about academic opportunities, develop research and writing skills, engage in scholarly discussions, collaborate across disciplines, and receive mentorship and peer support.
+                </p>
+            </div>
+            <div class="flex flex-col gap-4 bg-white w-220 max-[370px]:w-70 max-[442px]:w-85 max-[648px]:w-100 max-[788px]:w-150 max-[962px]:w-180 h-80 p-6 rounded-2xl border border-card-border">
+                <div class="inline-flex space-x-4">
+                    <div class="bg-primary-orange h-20 w-2"></div>
+                    <div class="font-standout text-lg ">“To ensure that young researchers are not isolated but supported academically, professionally, and intellectually, through a strong research community.”</div>
+                </div>
+                <span class="text-fade">YRA Purpose</span>
+            </div>
+        </div>
+    </div>
+    <div class="w-full bg-[#fff]! g-x-pad py-16">
+        <div class="flex flex-col justify-start">
+            <div class="flex flex-col justify-between mb-6.25 w-full">
+                <p class="text-primary-orange! font-[850] tracking-[0.08em] uppercase text-[12px] max-md:text-[10px]">
+                    our direction
+                </p>
+                <h1 class="font-standout font-bold mt-1 mb-5 leading-[1.15] text-[37px] max-md:text-[30px] tracking-[-1.8px] text-black">
+                    Vision, Mission & Purpose
+                </h1>
+            </div>
+            <div class="grid grid-cols-3 max-[1125px]:grid-cols-2 max-sm:grid-cols-1 gap-4">
+                @for (dir of direction; track dir.id) {
+                    <app-card
+                        [id]="dir.id"
+                        [heading]="dir.heading"
+                        [title]="dir.title"
+                        [subTitle]="dir.subTitle"
+                        [content]="dir.content"
+                        [link]="dir.link"
+                        [linkText]="dir.linkText"
+                        [showOverlay]="dir.showOverlay"
+                        [showOuterBorder]="dir.showOuterBorder"
+                        [showButton]="dir.showButton"
+                        [buttonType]="dir.buttonType"
+                        [buttonText]="dir.buttonText"
+                        [outerBorderTextTag]="dir.outerBorderTextTag"
+                        [showOuterTextTag]="dir.showOuterTextTag"
+                        [needLongerCard]="dir.needLongerCard"
+                        [minHeight]="dir.minHeight"
+                    />
+                }
+            </div>
+        </div>
+    </div>
+    <div class="w-full bg-[linear-gradient(135deg,#fff_0%,#f4fbfd_70%,#e9f7fa_100%)] g-x-pad py-16">
+        <div class="flex flex-col justify-between items-end max-[660px]:items-center gap-5 mb-6">
+            <div class="flex flex-col justify-between mb-6.25 w-full">
+                <p class="text-primary-orange! font-[850] tracking-[0.08em] uppercase text-[12px] max-md:text-[10px]">
+                    our values
+                </p>
+                <h1 class="font-standout font-bold mt-1 mb-5 leading-[1.15] text-[37px] max-md:text-[30px] tracking-[-1.8px] text-black">
+                    What guides YRA
+                </h1>
+            </div>
+            <div class="grid grid-cols-3 max-[1058px]:grid-cols-2 max-[660px]:flex max-[660px]:flex-col gap-4.5">
+                @for (g of guides; track g.id) {
+                    <app-card
+                        [id]="g.id"
+                        [heading]="g.heading"
+                        [title]="g.title"
+                        [subTitle]="g.subTitle"
+                        [content]="g.content"
+                        [link]="g.link"
+                        [linkText]="g.linkText"
+                        [showOverlay]="g.showOverlay"
+                        [showOuterBorder]="g.showOuterBorder"
+                        [showButton]="g.showButton"
+                        [buttonType]="g.buttonType"
+                        [buttonText]="g.buttonText"
+                        [outerBorderTextTag]="g.outerBorderTextTag"
+                        [showOuterTextTag]="g.showOuterTextTag"
+                        [needLongerCard]="g.needLongerCard"
+                        [minHeight]="g.minHeight"
+                    />
+                }
+            </div>
+        </div>
+    </div>
+    <div class="w-full bg-[#fff]! g-x-pad py-16">
+        <div class="flex flex-col justify-between mb-6.25 w-full">
+            <p class="text-primary-orange! font-[850] tracking-[0.08em] uppercase text-[12px] max-md:text-[10px]">
+                leadership
+            </p>
+            <h1 class="font-standout font-bold mt-1 mb-5 leading-[1.15] text-[37px] max-md:text-[30px] tracking-[-1.8px] text-black">
+                Meet the team
+            </h1>
+        </div>
+        <div class="grid grid-cols-3 max-[1058px]:grid-cols-2 max-[660px]:flex max-[660px]:flex-col gap-4.5">
+            @for (t of team; track t.id) {
+                <app-card
+                    [id]="t.id"
+                    [heading]="t.heading"
+                    [title]="t.title"
+                    [subTitle]="t.subTitle"
+                    [content]="t.content"
+                    [link]="t.link"
+                    [linkText]="t.linkText"
+                    [showOverlay]="t.showOverlay"
+                    [showOuterBorder]="t.showOuterBorder"
+                    [showButton]="t.showButton"
+                    [buttonType]="t.buttonType"
+                    [buttonText]="t.buttonText"
+                    [outerBorderTextTag]="t.outerBorderTextTag"
+                    [showOuterTextTag]="t.showOuterTextTag"
+                    [needLongerCard]="t.needLongerCard"
+                    [minHeight]="t.minHeight"
+                />
+            }
+        </div>
+    </div>
+</section>
+

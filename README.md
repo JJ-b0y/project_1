@@ -1,59 +1,94 @@
-# Project1
+# Young Researcher Academy
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.20.
+A frontend web application built with Angular for registering participants for research academy programmes and seminars. Users can view available programmes, register for an event, and manage registration details through a clean, responsive interface.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Register participants for Young Research Academy programmes and seminars
+- Browse available programmes
+- View registered participants in a structured table
+- Join the community
+- View the media page
+
+## Technologies Used
+
+- **Angular** — Frontend framework for building the single-page application
+- **TypeScript** — Primary programming language
+- **Angular Material** — UI components, including tables, form controls, and notifications
+- **Angular Forms** — Template-driven forms and two-way data binding
+- **Angular Service** — Reusable, shareable code block to perform specific tasks in multiple components
+- **Angular Routing** — Seamless component routing without reloading the browser
+- **RxJS** — Reactive programming and asynchronous data handling
+- **NgRx** — Angular Reactive Extension to manage global state of the application
+- **TailwindCSS** — Custom styling and responsive layout
+- **Node.js and npm** — JavaScript runtime and package management
+
+## Prerequisites
+
+Ensure that the following are installed on your computer:
+
+- [Node.js](https://nodejs.org/) (includes npm)
+- Angular CLI
+
+Install the Angular CLI globally if it is not already installed:
+
+```bash
+npm install -g @angular/cli
+```
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone [https://github.com/JJ-b0y/project_1.git](https://github.com/JJ-b0y/project_1.git)
+cd project_1
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the application
+
+```bash
+npm start
+```
+
+or:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The application will be available at:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The Angular development server automatically rebuilds and reloads the browser when source files change. [289][290][296]
+
+## Build for Production
+
+To create an optimized production build, run:
 
 ```bash
-ng generate --help
+npm run build
 ```
 
-## Building
-
-To build the project run:
+or:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The compiled output will be generated in the `dist/` folder.
 
-## Running unit tests
+## Author
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**JJ**  
+Full-stack web developer  
+[GitHub Profile](https://github.com/JJ-b0y)

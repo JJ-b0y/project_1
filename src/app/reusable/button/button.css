@@ -1,0 +1,27 @@
+button {
+  transition: .10s;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+}
+button:hover {
+  transform: translateY(-1px);
+}
+.whiteBgButton {
+  display: inline-flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid var(--color-primary-blue);
+  color: var(--color-primary-blue);
+  border-radius: 10px;
+}
+.orangeBgButton {
+  background-color: var(--color-primary-orange);
+  box-shadow: 0 7px 18px rgba(255,134,27,.22);
+  color: #fff;
+  border-radius: 10px;
+}
+.blueBgButton {
+  background-color: var(--color-primary-blue);
+  color: #fff;
+  border-radius: 10px;
+}

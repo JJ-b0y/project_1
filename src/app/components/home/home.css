@@ -1,0 +1,9 @@
+* {
+  font-family: var(--font-fontSans);
+}
+
+h1, h1 span {
+  font-family: var(--font-standout);
+  font-weight: bold;
+  unicode-bidi: isolate;
+}

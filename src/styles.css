@@ -1,3 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+@tailwind utilities;
+
+@layer utilities {
+    .g-x-pad {
+        @apply px-19.5 max-md:px-6;
+    }
+}
+
+@theme {
+    --color-primary-blue: #1F86A5;
+    --color-primary-orange: #FF861B;
+    --color-fade: #66737D;
+    --color-card-border: #DFE7EB;
+    --color-card-bg: #FFF;
+    --color-bg-footer: #123F4D;
+
+    --font-fontSans: 'Inter', 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', sans-serif;
+    --font-standout: 'Georgia', 'Times New Roman', serif;
+
+    --shadow-card: 0 10px 30px rgba(19, 49, 61, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}

@@ -1,0 +1,32 @@
+<section class="block items-start w-full">
+    <app-page-header
+        [heading]="pageHeader.heading"
+        [title]="pageHeader.title"
+        [description]="pageHeader.description"
+    />
+    <div class="w-full bg-[linear-gradient(135deg,#fff_0%,#f4fbfd_70%,#e9f7fa_100%)]! g-x-pad py-16">
+        <div class="grid grid-cols-3 max-[1058px]:grid-cols-2 max-[660px]:flex max-[660px]:flex-col gap-4.5">
+            @for (resource of resources; track resource.id) {
+                <app-card
+                    [id]="resource.id"
+                    [heading]="resource.heading | uppercase"
+                    [title]="resource.title"
+                    [subTitle]="resource.subTitle"
+                    [content]="resource.content"
+                    [link]="resource.link"
+                    [linkText]="resource.linkText"
+                    [showOverlay]="resource.showOverlay"
+                    [showOuterBorder]="resource.showOuterBorder"
+                    [showButton]="resource.showButton"
+                    [buttonType]="resource.buttonType"
+                    [buttonText]="resource.buttonText"
+                    [outerBorderTextTag]="resource.outerBorderTextTag"
+                    [showOuterTextTag]="resource.showOuterTextTag"
+                    [needLongerCard]="resource.needLongerCard"
+                    [minHeight]="resource.minHeight"
+                />
+            }
+        </div>
+    </div>
+</section>
+
