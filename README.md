@@ -89,7 +89,7 @@ The compiled output will be generated in the `dist/` folder.
 
 ## Project Demo
 
-[Watch the project demo](./public/Angular_Frontend_Project_Demo.mp4)
+[Watch the project demo on Google Drive](https://drive.google.com/file/d/17SOPB_WgjJw-GqeS8jsFJv1K-XTkk3gx/view?usp=sharing)
 
 ## Author
 
