@@ -87,6 +87,10 @@ ng build
 
 The compiled output will be generated in the `dist/` folder.
 
+## Project Demo
+
+[Watch the project demo](./public/Angular_Frontend_Project_Demo.mp4)
+
 ## Author
 
 **JJ**  
